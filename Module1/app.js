@@ -29,12 +29,19 @@ function LunchCheckController($scope) {
         }
       }
 
-      if ($scope.count <= 3) {
+      if (($scope.count >= 1) & ($scope.count <= 3)) {
         $scope.messageText = "Enjoy!";
       }
 
       else {
-        $scope.messageText = "Too much!";
+        if ($scope.count === 0){
+          $scope.messageText = "Please enter data first";
+          $scope.customTextcolor.color = {"color":"red"};
+          $scope.customBorder.border = {"border": "2px solid red"};
+        }
+        else {
+          $scope.messageText = "Too much!";
+        }
       }
     }
   };
