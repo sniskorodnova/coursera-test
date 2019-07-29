@@ -1,14 +1,6 @@
 (function () {
 'use strict';
 
-var shoppingList = [
-  { name: "cookies", quantity: 10 },
-  { name: "apples", quantity: 5},
-  { name: "tomatos", quantity: 3},
-  { name: "eggs", quantity: 12},
-  { name: "coffee", quantity: 1}
-];
-
 angular.module('ShoppingListCheckOff', [])
 .controller('ToBuyController', ToBuyController)
 .controller('AlreadyBoughtController', AlreadyBoughtController)
@@ -33,6 +25,14 @@ function AlreadyBoughtController(ShoppingListCheckOffService) {
 
 function ShoppingListCheckOffService() {
   var service = this;
+
+  var shoppingList = [
+    { name: "cookies", quantity: 10 },
+    { name: "apples", quantity: 5},
+    { name: "tomatos", quantity: 3},
+    { name: "eggs", quantity: 12},
+    { name: "coffee", quantity: 1}
+  ];
 
   var tobuy = shoppingList;
   var bought = [];
